@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "149894059595",
+    "project_id": "psychoai-5b6da",
+    "storage_bucket": "psychoai-5b6da.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:149894059595:android:5bc1252060a0c2ebb3dfce",
+        "android_client_info": {
+          "package_name": "com.psychoai.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "149894059595-kv8klahm10av1s95jbveb7ln4cj2qa8o.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.psychoai.app",
+            "certificate_hash": "7e6d9fc7b92f73bf6e1969200f3533770d3329af"
+          }
+        },
+        {
+          "client_id": "149894059595-dbnrc0mobfv70pi5tt6rv49bfebmcaal.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDt8_GlCpCQuzesHxqWP9kkec-XNWiXgdA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "149894059595-dbnrc0mobfv70pi5tt6rv49bfebmcaal.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
