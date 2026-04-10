@@ -1,0 +1,41 @@
+package com.psychoai.app.api
+
+import retrofit2.Response
+import retrofit2.http.*
+
+interface PsychoaiApiService {
+
+    @POST("analyze_trade")
+    suspend fun analyzeTrade(
+        @Body request: AnalyzeRequest
+    ): Response<AnalyzeResponse>
+
+    @GET("coaching/{traderId}/latest")
+    suspend fun getLatestCoaching(
+        @Path("traderId") traderId: String
+    ): Response<CoachingResult>
+
+    @GET("trader/{traderId}/profile")
+    suspend fun getTraderProfile(
+        @Path("traderId") traderId: String
+    ): Response<TraderProfile>
+
+    // New unified history endpoint — returns both coaching and chat sessions
+    @GET("trader/{traderId}/history")
+    suspend fun getFullHistory(
+        @Path("traderId") traderId: String
+    ): Response<FullHistory>
+
+    @POST("chat")
+    suspend fun chatWithPlutus(
+        @Body request: ChatRequest
+    ): Response<ChatResponse>
+
+    @POST("fcm_token")
+    suspend fun saveFcmToken(
+        @Body request: SaveTokenRequest
+    ): Response<Map<String, String>>
+
+    @GET("health")
+    suspend fun health(): Response<Map<String, String>>
+}
