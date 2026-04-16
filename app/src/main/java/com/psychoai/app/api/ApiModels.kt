@@ -26,9 +26,18 @@ data class AnalyzeRequest(
     val history: List<TradeData>? = null
 )
 
+// ── FIX: Added messages to carry full conversation history ────
+// Without this: every /chat call only sent the current message.
+// Groq had zero context so Plutus re-introduced itself on every
+// follow-up ("yes", "tell me more", etc.)
+// With this: the entire back-and-forth is sent every time so
+// Groq correctly continues the conversation.
 data class ChatRequest(
     @SerializedName("trader_id") val traderId: String,
-    val message: String
+    val message: String,
+    // Full conversation history: list of {"role":"user"/"assistant","content":"..."}
+    // Defaults to empty list — backwards compatible if backend not yet updated
+    val messages: List<Map<String, String>> = emptyList()
 )
 
 data class SaveTokenRequest(
@@ -90,7 +99,7 @@ data class UnifiedHistoryEntry(
     val confidence: Double = 0.0
 )
 
-// Used by the new unified /trader/{id}/history endpoint
+// Used by the unified /trader/{id}/history endpoint
 data class HistoryItem(
     val type:       String = "",
     val date:       String = "",

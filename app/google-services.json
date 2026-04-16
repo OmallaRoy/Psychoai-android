@@ -14,11 +14,11 @@
       },
       "oauth_client": [
         {
-          "client_id": "149894059595-kv8klahm10av1s95jbveb7ln4cj2qa8o.apps.googleusercontent.com",
+          "client_id": "149894059595-hkjgb1ules88c3gglnvqtoietlikdoo0.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.psychoai.app",
-            "certificate_hash": "7e6d9fc7b92f73bf6e1969200f3533770d3329af"
+            "certificate_hash": "7739ee4862971be00ab4376e4abbad6fef4933fb"
           }
         },
         {
