@@ -20,11 +20,22 @@ interface PsychoaiApiService {
         @Path("traderId") traderId: String
     ): Response<TraderProfile>
 
-    // New unified history endpoint — returns both coaching and chat sessions
     @GET("trader/{traderId}/history")
     suspend fun getFullHistory(
         @Path("traderId") traderId: String
     ): Response<FullHistory>
+
+    // Returns all chat sessions for the history drawer — one per conversation
+    @GET("trader/{traderId}/sessions")
+    suspend fun getChatSessions(
+        @Path("traderId") traderId: String
+    ): Response<SessionsResponse>
+
+    // Returns a single session document — used to restore conversation
+    @GET("session/{sessionId}")
+    suspend fun getSession(
+        @Path("sessionId") sessionId: String
+    ): Response<ChatSession>
 
     @POST("chat")
     suspend fun chatWithPlutus(
