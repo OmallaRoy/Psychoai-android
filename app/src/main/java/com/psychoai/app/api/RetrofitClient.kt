@@ -9,9 +9,9 @@ import java.util.concurrent.TimeUnit
 object RetrofitClient {
 
     private const val BASE_URL =
-        "psychoai-backend-production-9003.up.railway.app"
+        "https://psychoai-backend-production-9003.up.railway.app/"
 
-//        private const val BASE_URL = "http://10.0.2.2:8000/"
+
 
     private val loggingInterceptor = HttpLoggingInterceptor().apply {
         level = HttpLoggingInterceptor.Level.BODY
